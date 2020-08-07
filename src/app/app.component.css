@@ -1,0 +1,28 @@
+.left-side{
+    max-height: 90vh;
+    overflow-y: scroll;
+}
+.card{
+    box-shadow: 0.1rem 0.1rem 0.3rem;
+}
+a{
+    text-decoration: none;
+}
+.main{
+    height: 100vh;
+    padding: 2%;
+}
+.card-sty{
+    height: 260px;
+}
+.btn-sty{
+    background-color: orangered;
+    border-radius: 25px;   
+    color: white;
+    white-space: nowrap;
+}
+.img-sty{
+    height: 150px;
+    width: 100%;
+    object-fit: contain;
+}

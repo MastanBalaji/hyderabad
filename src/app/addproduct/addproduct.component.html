@@ -1,0 +1,54 @@
+<section class="row w-100">
+    <div class="col-3">
+    </div>
+    <div class="col-12 col-md-9">
+        <div class="card p-1 border-0 w-100 d-flex justify-content-center align-items-center">
+            <form [formGroup]="signup" (ngSubmit)="onSubmit()" class="w-75">
+                <div class='mt-3 col-12'>
+                    <label>Product Name <span class="clr1">*</span></label>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <input matInput placeholder="Product Name" formControlName="name">
+                        <mat-error *ngIf="signup.get('name').hasError('required')">
+                            <p>Product Name is required</p>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class='col-12 w-100'>
+                    <label>Price <span class="clr1">*</span></label>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <input matInput placeholder="Price" formControlName="price">
+                        <mat-error *ngIf="signup.get('price').hasError('required')">
+                            <p>Price is required</p>
+                        </mat-error>
+                        <mat-error *ngIf="signup.get('price').hasError('pattern')">
+                            <p>Numbers only</p>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class='col-12'>
+                    <label>Description <span class="clr1">*</span></label>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <input matInput placeholder="Enter Description" formControlName="description">
+                        <mat-error *ngIf="signup.get('description').hasError('required')">
+                            <p>Description is required</p>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class='col-12 w-100 mt-2'>
+                    <label>Image Upload <span class="clr1">*</span></label>
+                    <div class="img-upload d-flex justify-content-center align-items-center">
+                        <label for="file" class="fa fa-upload icon-sty"></label>
+                    </div>
+                    <p *ngIf='image'>{{image}}</p>
+                    <input type="file" accept="image/*" name="image" id="file" formControlName="file"
+                        [(ngModel)]='image' (change)='onchange($event)' style="display: none;">
+                </div>
+                <div class='col-12 w-100 mt-2 d-flex justify-content-center align-content-center'>
+                    <button class="btn btn-sty w-50 mt-3 mb-2" [class.dis]='!signup.valid' [disabled]="!signup.valid"
+                        type="submit">Add to
+                        Cart</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

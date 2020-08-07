@@ -1,0 +1,30 @@
+.img-sty{
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+}
+.par-sty{
+    word-break: break-all !important;
+    margin: 0 auto;
+}
+.btn-sty{
+    background-color: orangered;
+    border-radius: 25px;   
+    color: white;
+    white-space: nowrap;
+}
+.width-sty{
+    width: 36% !important;
+}
+.clr{
+    color: rgb(163, 163, 163);
+}
+.card{
+    box-shadow: 0.1rem 0.1rem 0.3rem;
+}
+.icon-sty{
+    font-size: 24px;
+    padding-right:20px;
+    cursor: pointer;
+    color:black;
+}
